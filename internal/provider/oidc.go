@@ -7,6 +7,7 @@ import (
 	"net/url"
 
 	"github.com/coreos/go-oidc"
+	"github.com/rajasoun/traefik-forward-auth/internal/configurations"
 	"golang.org/x/oauth2"
 )
 
@@ -60,7 +61,7 @@ func (o *OIDC) Setup() error {
 	})
 	o.UserURL = &url.URL{
 		Scheme: "https",
-		Host:   "cloudsso-test.cisco.com",
+		Host:   configurations.HOST_NAME,
 		Path:   "/idp/userinfo.openid",
 	}
 
